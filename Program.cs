@@ -1,5 +1,4 @@
 ﻿using CSHARP25031801;
-using System.Security.Cryptography;
 using System.Text;
 
 const string PATH = "D:\\PROJECTS\\CSHARP25031801\\src\\berek2020.txt";
@@ -22,11 +21,8 @@ Console.Write("t6: ");
 Employee hPaidEmp = employees
     .Where(e => e.Department == depName)
     .MaxBy(e => e.Payment);
-if (hPaidEmp is null) Console.WriteLine(
-    "the department entered does not exist at the company");
-else Console.WriteLine(
-    $"the highest-earning employee in the department:" +
-    $"\n{hPaidEmp}");
+if (hPaidEmp is null) Console.WriteLine("the department entered does not exist at the company");
+else Console.WriteLine($"the highest-earning employee in the department:\n{hPaidEmp}");
 
 Console.WriteLine("t7: statistics:");
 var deps = employees.GroupBy(e => e.Department);
